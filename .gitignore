@@ -1,0 +1,6 @@
+/bin/*
+/obj/*
+/reports/*
+*.layout
+*.depend
+*.cscope_file_lsit

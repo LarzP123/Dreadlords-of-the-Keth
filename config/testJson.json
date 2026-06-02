@@ -1,0 +1,17 @@
+{
+	"PlanetName": "Earth",
+	"PlanetID": 1,
+	"SurfaceColor": {
+		"R": 0.82421,
+		"G": 0.32421,
+		"B": 0.32421
+	},
+	"LiquidColor": {
+		"R": 0.42421,
+		"G": 0.32421,
+		"B": 0.32421
+	},
+	"SurfaceHeight": 0.52312,
+	"PlanetRadius": 0.3750,
+	"OrbitRadius": 0.9583
+}

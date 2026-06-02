@@ -1,0 +1,30 @@
+stages:
+  - lint
+
+c-code-linter:
+  stage: lint
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache clang clang-dev # Install clang and clang-tidy
+    # OpenGL Keywords (using a space-separated string for sh compatibility)
+    - |
+      keywords="printf PRINTF GLUT glViewport glCallList glut glBindTexture GL_ glTexParameteri glut glNormal gluLookAt glDepthMask glGenLists glGenTextures glTexCoord glVertex glEnd glColor glOrtho glLoadIdentity glPop gluPerspective glPush"
+      # Preprocess files to comment out lines containing any of the OpenGL keywords
+      find . -path './.vscode' -prune -o -type f \( -name "*.c" -o -name "*.h" \) -print | while read -r file; do
+        for keyword in $keywords; do
+          sed -i "/$keyword/s/^/\/\//" "$file"
+        done
+      done
+    # Replace GLuint with int
+    - |
+      find . -path './.vscode' -prune -o -type f \( -name "*.c" -o -name "*.h" \) -print | while read -r file; do
+        sed -i 's/\bGLuint\b/int/g' "$file"
+      done
+    # Replace GLfloat with float
+    - |
+      find . -path './.vscode' -prune -o -type f \( -name "*.c" -o -name "*.h" \) -print | while read -r file; do
+        sed -i 's/\bGLfloat\b/float/g' "$file"
+      done
+  script:
+    - echo "Running clang-tidy on .c and .h files..."
+    - clang-tidy $(find . -path './.vscode' -prune -o -type f \( -name "*.c" -o -name "*.h" \) -print | grep -v -E 'stb_image\.h$|munit\.c$|munit\.h$') -checks='-clang-analyzer-deadcode.DeadStores'

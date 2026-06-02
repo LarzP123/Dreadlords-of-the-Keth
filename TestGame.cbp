@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TestGame" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TestGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c99" />
+					<Add option="-g" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-lfreeglut -lglew32 -lopengl32 -lglu32" />
+					<LinkerExe value="CCompiler" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='xcopy /y &quot;$(PROJECT_DIR)\bin\debug\*.exe&quot; &quot;$(PROJECT_DIR)\&quot;' />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TestGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c99" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lfreeglut -lglew32 -lopengl32 -lglu32" />
+					<LinkerExe value="CCompiler" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c99" />
+		</Compiler>
+		<Linker>
+			<Add option="-lfreeglut -lglew32 -lopengl32 -lglu32" />
+		</Linker>
+		<Unit filename="SolarSystemList.txt" />
+		<Unit filename="code/2dGraphicFunctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/2dGraphicFunctions.h" />
+		<Unit filename="code/3dGraphicFunctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/3dGraphicFunctions.h" />
+		<Unit filename="code/calcGameLogic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/calcGameLogic.h" />
+		<Unit filename="code/graphicOverhead.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/graphicOverhead.h" />
+		<Unit filename="code/initVars.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/initVars.h" />
+		<Unit filename="code/inputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/inputs.h" />
+		<Unit filename="code/jsonParser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/jsonParser.h" />
+		<Unit filename="code/larzMath.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/larzMath.h" />
+		<Unit filename="code/planetData.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/planetData.h" />
+		<Unit filename="code/solarSystemData.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/solarSystemData.h" />
+		<Unit filename="code/stb_image.h" />
+		<Unit filename="config/testJson.json" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="planetList.txt" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

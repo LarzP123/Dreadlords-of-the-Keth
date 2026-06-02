@@ -1,0 +1,25 @@
+{
+	"name": "Mercury",
+	"graphics": {
+		"surfaceRefractiveness": 1.4,
+		"Colors": {
+			"Liquid": {
+			  "Red": 0.76,
+			  "Green": 0.73,
+			  "Blue": 0.74
+			},
+			"Solid": {
+			  "Red": 0.51,
+			  "Green": 0.49,
+			  "Blue": 0.49
+			}
+		}
+	}
+	"astronomicalData": {
+		"yearAngle": 0.2,
+		"oribtalRadius": 0.387
+		"planetRadius": 0.375
+		"liquidSurfaceLevel": 0.0
+	}
+  }
+}
